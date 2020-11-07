@@ -8,6 +8,15 @@ function moveLeft(dodger) {
   }
 }
 
+function moveLeft(dodger) {
+  let leftNumber = dodger.style.left.replace('px', '');
+  let left = parseInt(leftNumber, 10);
+  
+  if (left > 0) {
+    dodger.style.left = `${left + 1}px`;
+  }
+}
+
 
 const dodger = document.getElementById('dodger');
 
@@ -16,6 +25,6 @@ document.addEventListener('keydown', function(key) {
     moveLeft(dodger);
   }
   else if (key.which === 39) {
-    moveRight(dodger);
+    moveRigh(dodger);
   }
 });
